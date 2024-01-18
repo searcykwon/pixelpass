@@ -1,0 +1,45 @@
+body {
+    font-family: jgs5; 
+    font-size: 40px;
+    background: #858585;
+
+}
+
+h1.logo {
+    text-align: center;
+    font-size: 200px;
+    font-weight: 400;
+}
+
+hr.solid {
+  height:1px;
+  width: 50px;
+  background-color:#0000;
+}
+
+
+
+div.cursor {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    width: 10px; 
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s, height 0.25s;
+}
+
+div.cursor.is-clicked {
+    width: 80px;
+    height: 80px;
+}
+
+div.register {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: white;
+}
