@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+<!-- //change this to a navigation -->
+    <header>
+    <nav>
+        <h1 class="pixellogo"">
+            PixelPass
+        </h1>
+    </nav>
+    </header>
+
+
+
+    <div class="cursor"></div>
+
+
+<body>
+    <div class="managerstable" id="managerstable">
+    <table id="managerstable"=> 
+      <tr class="tableheaders"> 
+        <th>Website</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Check</th>
+      </tr>
+      <tr class="tableinfo">
+        <td>Website</td>
+        <td>Username</td>
+        <td>Password</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+     
+    </table>
+</div>
+
+<div class="pwmanagerform">
+    <h2>Add Passwords</h2>
+
+<form class="pwmanagerform" method="POST">
+    <!-- website input  -->
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" required>
+    <br></br>
+    <!-- username input  -->
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+    <br></br>
+    <!-- password input  -->
+    <label for="password">Password</label>
+    <input type="password" id="pass" name="pass" required>
+    <br></br>
+    <input type="submit" class="managersubmit">
+</form>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="manager.js"></script>
+</html>
+
+

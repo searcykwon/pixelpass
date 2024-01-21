@@ -1,0 +1,153 @@
+body {
+    font-family: jgs5; 
+    font-size: 40px;
+    background: #858585;
+
+}
+
+nav h1.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+
+  }
+
+h1.logo {
+color: #000;
+-webkit-text-stroke-width: 1;
+-webkit-text-stroke-color: #000;
+font-family: jgs5;
+font-size: 300px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
+margin: 50px auto; /
+}
+
+hr.solid {
+
+  height:1px;
+  width: 100%;
+  border: 1px solid black;
+  background-color: black;
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);  /* makes it vertically center */
+}
+
+.login {
+  text-align:center
+
+}
+
+.login label,
+.login input {
+    display: block;
+    margin: 10px auto;
+    align-items:center;
+}
+
+.signupPopup {
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+}
+.register {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #999999;
+  z-index: 9;
+}
+
+.singup-form {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+
+
+.pwmanagerform {
+  text-align: center;
+  margin-top: 5px; 
+}
+
+.pwmanagerform label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pwmanagerform input {
+  display: block;
+  margin: 0 auto; 
+}
+
+
+
+
+
+/* div.cursor {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    width: 10px; 
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s, height 0.25s;
+}
+
+div.cursor.is-clicked {
+    width: 80px;
+    height: 80px;
+} */
+
+tr.tableinfo {
+    color: #FFF;
+    font-family: jgs_Font;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+table {
+    justify-content: flex;
+    width: 800%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Adjust the margin as needed for vertical spacing */
+  }
+  
+  th, td {
+    padding: 10px; /* Adjust the padding for spacing within cells */
+    border: 1px solid #000000; 
+  }
+  
+/* div.register {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: white;
+} */
+
+
+div.managerstable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+
