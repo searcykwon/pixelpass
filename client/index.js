@@ -1,20 +1,9 @@
-//signup
-// function openForm() {
-//     document.getElementById("signup-form").style.display = "block";
-// }
-
-
-
-// const form = document.querySelector('form');
-// const login_email = document.querySelector('#login-uname')
-// const login_password = document.querySelector('#login-pass')
-//make new ones for the creating user function
 function openForm() {
-    document.getElementById('openSignup').style.display = "block";
+    document.getElementById('register').style.display = "block";
   }
   
   function closeForm() {
-    document.getElementById('closePopup').style.display = "none";
+    document.getElementById('register').style.display = "none";
   }
   
 
@@ -56,7 +45,7 @@ function userLogin(event) {
 axios.post('http://localhost:3000/login', body)
 .then(response => {
     if (response.status === 200) {
-        window.location.href = 'http://localhost:3000/manager.html'
+        window.location.href = '/viewpasswords'
     } else {
         alert('Incorrect email or password!');
     }
@@ -76,3 +65,4 @@ loginButton.addEventListener('click', userLogin)
 //cookies will tell the server that the user logged in
 //will tell which user made request and get their passwrds 
 //login will set cookie and then verify which user is logging in.
+

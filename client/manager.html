@@ -9,9 +9,13 @@
 <!-- //change this to a navigation -->
     <header>
     <nav>
-        <h1 class="pixellogo"">
+        <h1 class="pixellogo">
             PixelPass
         </h1>
+
+        <div class="logoutBtn" id="logoutBtn" onclick='logout()'>
+            <button>LOGOUT</button >
+        </div>
     </nav>
     </header>
 
@@ -23,22 +27,16 @@
 <body>
     <div class="managerstable" id="managerstable">
     <table id="managerstable"=> 
-      <tr class="tableheaders"> 
-        <th>Website</th>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Edit</th>
-        <th>Delete</th>
-        <th>Check</th>
-      </tr>
-      <tr class="tableinfo">
-        <td>Website</td>
-        <td>Username</td>
-        <td>Password</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+        <thead class="tableheaders"> 
+            <th>Website</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Check</th>
+        </thead>
+        <tbody id="userInput"> 
+        </tbody>
      
     </table>
 </div>
@@ -59,13 +57,19 @@
     <label for="password">Password</label>
     <input type="password" id="pass" name="pass" required>
     <br></br>
-    <input type="submit" class="managersubmit">
+    <input type="submit" class="managersubmit" value="SUBMIT">
 </form>
 </div>
 
-</body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="manager.js"></script>
+<script src="manager.js"></script> 
+<!-- document.ready function will do the same ^^ as this. 
+will make sure that the DOM tree is completely loaded before the 
+    
+    this can't go before because 
+it won't be defined. ^ this is going at the end because if i had it outside it won't 
+load my functions that are simply being called when page is loaded  -->
+</body>
 </html>
 
 

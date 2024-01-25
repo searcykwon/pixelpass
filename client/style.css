@@ -5,17 +5,54 @@ body {
 
 }
 
-nav h1.logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    margin-top: 20px;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
 
-  }
+.pixellogo {
+  margin: 0;
+  font-size: 80px;
+  color: #000000; /* Set your desired text color */
+}
+
+.logoutBtn button {
+  font-family: jgs_Font;
+  padding: 16px 30px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.logoutBtn button:hover {
+  background-color: #333333; /* Set your desired hover background color */
+}
+
+
+button.edit, 
+button.delete, 
+button.check, 
+.managersubmit {
+  font-family: jgs_Font;
+  padding: 5px 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  
+}
+
+tbody {
+  font-family: jgs_Font;
+  color:#000;
+  font-size: 30px;
+
+}
 
 h1.logo {
 color: #000;
@@ -62,19 +99,36 @@ hr.solid {
 .register {
   display: none;
   position: fixed;
-  left: 45%;
+  align-items: center;
+  left: 50%;
   top: 5%;
-  transform: translate(-50%, 5%);
-  border: 3px solid #999999;
-  z-index: 9;
-}
-
-.singup-form {
-  max-width: 300px;
   padding: 20px;
-  background-color: #fff;
+  transform: translate(-50%, 5%);
+  border: 3px solid black;
+  z-index: 9;
+  background-color: white;
 }
 
+.register button, 
+.openSignup button, 
+.login-btn {
+  font-family: jgs_Font;
+  padding: 5px 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.register button:hover {
+  background-color: #333333;
+}
+
+.openSignupBtn {
+  align-items:center;
+
+}
 
 
 .pwmanagerform {
