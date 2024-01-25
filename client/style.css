@@ -2,6 +2,7 @@ body {
     font-family: jgs5; 
     font-size: 40px;
     background: #858585;
+    height: 100vh;
 
 }
 
@@ -9,7 +10,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 20px 10px;
 }
 
 .pixellogo {
@@ -79,7 +80,7 @@ hr.solid {
 }
 
 .login {
-  text-align:center
+  text-align:center;
 
 }
 
@@ -88,14 +89,23 @@ hr.solid {
     display: block;
     margin: 10px auto;
     align-items:center;
+    width: 300px; 
+    height: 40px;
 }
 
 .signupPopup {
   position: relative;
   text-align: center;
   width: 100%;
-
 }
+
+.closesignupcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
 .register {
   display: none;
   position: fixed;
@@ -121,29 +131,31 @@ hr.solid {
   font-size: 20px;
 }
 
-.register button:hover {
+
+.openSignup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.register button:hover, 
+.login-btn:hover, 
+.openSignup button:hover, 
+.managersubmit:hover {
   background-color: #333333;
 }
 
-.openSignupBtn {
-  align-items:center;
-
+.logincontainer {
+  margin-top:200px;
 }
+
 
 
 .pwmanagerform {
   text-align: center;
   margin-top: 5px; 
-}
-
-.pwmanagerform label {
   display: block;
-  margin-bottom: 5px;
-}
-
-.pwmanagerform input {
-  display: block;
-  margin: 0 auto; 
 }
 
 
@@ -165,6 +177,14 @@ hr.solid {
 div.cursor.is-clicked {
     width: 80px;
     height: 80px;
+}
+
+canvas {
+  position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
 } */
 
 tr.tableinfo {
@@ -178,7 +198,7 @@ tr.tableinfo {
 
 table {
     justify-content: flex;
-    width: 800%;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 20px; /* Adjust the margin as needed for vertical spacing */
   }
@@ -196,12 +216,12 @@ table {
     background: white;
 } */
 
-
 div.managerstable {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin-top: 0px;
+
   }
 
 

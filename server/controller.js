@@ -2,7 +2,8 @@ require('dotenv').config()
 const {CONNECTION_STRING} = process.env
 const Sequelize = require('sequelize')
 const bcrypt = require('bcryptjs');
-var crypto = require('crypto');
+const crypto = require("crypto-js")
+const jwt = require("jsonwebtoken")
 
 const sequelize = new Sequelize(CONNECTION_STRING);
 console.log(CONNECTION_STRING)
@@ -29,7 +30,7 @@ module.exports = {
 
     getLogin: (req, res) => {
         let {email, password} = req.body;
-//vulnerable to SQL injection try doing a SQL injection with INSERT INTO... 
+//vulnerable to SQL injection if plain do a SQL injection with INSERT INTO... 
         sequelize.query('SELECT * FROM users WHERE email = :email', 
         {
             replacements: {email, password}, 
@@ -66,32 +67,33 @@ module.exports = {
     },
 
     addPassword: (req, res) => {
+        const userid = req.cookies['user_id'] 
 
         let {site, user, pass} = req.body;
         console.log(req.body);
         console.log(req.cookies);
         
-        //generate the random encryption key 
-        function generateEncryptionKey() {
-            return crypto.randomBytes(32).toString('hex');//generates 32bytes .toString method
-            //takes the randomBytes and makes it a hexa string
-        }
-        
+
+        const token = jwt.sign({password: pass}, process.env.SECRET); //gives an encoded password 
+        console.log(token)
+
+        //.sign is a method that takes in a payload(json object that contains key value pairs that i want to encrypt) 
+        //and a secret(user created--used by the algo uses AES256) and returns and 
+        //encrypted string
 
         //query should not go through if user types in nothing
-        
-      
+            
         if (user === '' || site === '' || pass === '') {
             res.status(403).send('');
             console.log('NO PASSWORD TO ENTER')
         } else { sequelize.query(  
-            'INSERT INTO credentials(website, username, password, user_id) VALUES(:site, :user, :pass, :userId)',
+            'INSERT INTO credentials(website, username, password, user_id) VALUES(:site, :user, :token, :userid)',
             {
                 replacements: {
                     site,
                     user,
-                    pass,
-                    userId: req.cookies['user_id']
+                    token,
+                    userid: req.cookies['user_id']
                 },
                 type: sequelize.QueryTypes.INSERT
             }
@@ -100,7 +102,7 @@ module.exports = {
             res.status(200).send(dbRes)
             console.log('SUCCESSFULLY ADDED NEW PASSWORD!')
         }).catch(err => {
-            console.log('ERROR ADDING PASSWORD!')
+            console.log('ERROR ADDING PASSWORD!', err)
         })
     }},
 
@@ -113,6 +115,17 @@ getCredentials: (req, res) => {
         type: sequelize.QueryTypes.SELECT
     })
     .then(dbRes => {
+        dbRes.forEach(element => {
+            try{
+            const decoded = jwt.verify(element.password, process.env.SECRET) //.verify is a method within the 
+            //jwt library makes sure the token is authentic. 
+            //returns the payload which is the data inside of the token stored
+            console.log(decoded.password)
+            element.password = decoded.password //element that was encrypted will become plain text
+        }catch(err) { //doesn't return the passwords that aren't encoded
+            console.log('NOT ENCODED')
+        }
+        })
         res.send(dbRes)
     }).catch(err => {
         console.log('ERROR GETTING CREDENTIALS', err)
@@ -155,7 +168,7 @@ updatePassword: (req, res) => {
         }) 
         .then(dbRes => {
             res.status(200).send(dbRes[0])
-            console.log('USER SUCCESSFULLY UPDATED')
+            console.log('PASSWORD SUCCESSFULLY UPDATED')
         }).catch(err => {
             console.log('COULD NOT UPDATE PASSWORD', err)
         })

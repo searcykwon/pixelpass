@@ -23,6 +23,10 @@ const signup_pass = document.querySelector('#signup-pass')
 
 axios.post('http://localhost:3000/register', body)
 .then(() => {
+    alert('Signup Successful')
+    signup_email.value = ''
+    signup_pass.value = ''
+
 });
 
 }
@@ -47,9 +51,13 @@ axios.post('http://localhost:3000/login', body)
     if (response.status === 200) {
         window.location.href = '/viewpasswords'
     } else {
+        loginEmail.value = '';
+        loginPass.value = '';
         alert('Incorrect email or password!');
     }
 }).catch(err => {
+    loginEmail.value = '';
+    loginPass.value = '';
     alert('Incorrect email or password!');
 })
 }

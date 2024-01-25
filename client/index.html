@@ -16,7 +16,7 @@
 
     <hr class="solid">
 
-    <div> 
+    <div class="logincontainer"> 
         <form class="login" method="POST">
             <label for="login-uname"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" id="login-uname" name="login-uname" required>
@@ -24,7 +24,7 @@
         <label for="login-pass"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" id="login-pass" name="login-pass" required>
 
-        <input type="submit" value="Login" class="login-btn"></input>
+        <input type="submit" value="ENTER" class="login-btn"></input>
         </form>
     </div>
 
@@ -46,8 +46,13 @@
       <label for="signup-pass"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="signup-pass" id="signup-pass" required>
   
+     <div class="buttoncontainer">
       <button type="submit" class="register-btn">REGISTER</button>
+      
+      <div class="closesignupcontainer">
       <button type="button" class="closePopup" id="closePopup" onclick='closeForm()''>CLOSE</button>
+    </div>
+    </div> 
     </form>
   </div>
 </div>

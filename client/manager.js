@@ -27,6 +27,11 @@ function passwordSubmit(event) {
     .then(() => {
         fetchData()
         alert('Successfully Added Password!')
+        site.value = ''
+        user.value = ''
+        pass.value = ''
+        
+
         // const row = document.createElement('tr')
         // row.innerHTML = `<td>${site.value}</td>` 
         // row.innerHTML += `<td>${user.value}</td>`
